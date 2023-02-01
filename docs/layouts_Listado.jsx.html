@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: layouts/Listado.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: layouts/Listado.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Componente página listado
+ *
+ * @author Paula Rumeu Romero
+ * @module Listado
+ */
+
+// Imports react
+import { useState, useEffect } from "react"
+
+// Import componentes
+import Filtro from "../components/Filtro/Filtro"
+import Buscador from "../components/Buscador"
+import Carta from "../components/Carta"
+import Paginacion from "../components/Paginacion"
+
+/**
+ * Usa datos del buscador y la API para mostrar un listado de cartas paginado
+ *
+ * @requires module:Filtro
+ * @requires module:Buscador
+ * @requires module:Carta
+ * @requires module:Paginacion
+ *
+ * @returns {JSX} Página listado
+ */
+const Listado = () => {
+  /**
+   * @name updatePageNumber
+   * @description Actualiza el número de página del listado
+   * @requires react
+   * @function
+   */
+  const [pageNumber, updatePageNumber] = useState(1)
+
+  /**
+   * @name setBuscador
+   * @description Actualiza la búsqueda
+   * @requires react
+   * @function
+   */
+  const [search, setBuscador] = useState("")
+
+  /**
+   * @name updateStatus
+   * @description Actualiza el estado de los filtros
+   * @requires react
+   * @function
+   */
+  const [status, updateStatus] = useState("")
+
+  /**
+   * @name updateGender
+   * @description Actualiza el filtro de género
+   * @requires react
+   * @function
+   */
+  const [gender, updateGender] = useState("")
+
+  /**
+   * @name updateSpecies
+   * @description Actualiza el filtro de especie
+   * @requires react
+   * @function
+   */
+  const [species, updateSpecies] = useState("")
+
+  /**
+   * @name api
+   * @description API a la que se le hace la petición
+   * @constant
+   * @type {string}
+   */
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&amp;name=${search}&amp;status=${status}&amp;gender=${gender}&amp;species=${species}`
+
+  /**
+   * @name useEffect
+   * @description Actualiza la petición a la API
+   * @requires react
+   * @function
+   * @async
+   */
+  useEffect(() => {
+    ;(async function () {
+      let data = await fetch(api).then((res) => res.json())
+      updateFetchedData(data)
+    })()
+  })
+
+  /**
+   * @name updateFetchedData
+   * @description Actualiza la información recibida de la API
+   * @requires react
+   * @function
+   */
+  const [fetchedData, updateFetchedData] = useState([])
+
+  // División de la información recibida de la API
+  const { info, results } = fetchedData
+
+  return (
+    &lt;div>
+      &lt;Filtro
+        pageNumber={pageNumber}
+        status={status}
+        updateStatus={updateStatus}
+        updateGender={updateGender}
+        updateSpecies={updateSpecies}
+        updatePageNumber={updatePageNumber}
+      />
+      &lt;Buscador setBuscador={setBuscador} updatePageNumber={updatePageNumber} />
+      &lt;div className="Listado">
+        &lt;Carta page="/listado/" results={results} />
+      &lt;/div>
+      &lt;Paginacion
+        info={info}
+        pageNumber={pageNumber}
+        updatePageNumber={updatePageNumber}
+      />
+    &lt;/div>
+  )
+}
+
+export default Listado
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-App.html">App</a></li><li><a href="module-Buscador.html">Buscador</a></li><li><a href="module-Carta.html">Carta</a></li><li><a href="module-CartaDetails.html">CartaDetails</a></li><li><a href="module-Contacto.html">Contacto</a></li><li><a href="module-Filtro.html">Filtro</a></li><li><a href="module-FiltroBtn.html">FiltroBtn</a></li><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Gender.html">Gender</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-Home.html">Home</a></li><li><a href="module-Listado.html">Listado</a></li><li><a href="module-Login.html">Login</a></li><li><a href="module-ModoBtn.html">ModoBtn</a></li><li><a href="module-NotFound.html">NotFound</a></li><li><a href="module-Paginacion.html">Paginacion</a></li><li><a href="module-Registro.html">Registro</a></li><li><a href="module-Species.html">Species</a></li><li><a href="module-Usuario.html">Usuario</a></li><li><a href="module-Validacion.html">Validacion</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Feb 01 2023 19:35:43 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

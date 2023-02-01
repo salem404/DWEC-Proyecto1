@@ -1,0 +1,15 @@
+//// Tema de día
+.light {
+  /// Colores
+  --primary-color: #{$diaPrimario};
+  --secondary-color: #{$diaSecundario};
+  --special-color-1: #{$diaAcento1};
+  --special-color-2: #{$diaAcento2};
+  --background-color: #{$diaFondo};
+  --visibility-color: #{$diaAcento1};
+  ///Imagenes
+  --access-image: url(../../img/accesoDia.svg);
+  --mode-image: url(../../img/modoDia.svg);
+  --contact-image: url(../../img/contactoDia.svg);
+  --search-image: url(../../img/searchDia.svg);
+}

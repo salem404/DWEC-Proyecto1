@@ -1,0 +1,42 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 5rem;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.108);
+  &__enlace_politicas {
+    font-family: $antique;
+    color: var(--visibility-color);
+    text-decoration: underline;
+    margin: auto;
+    font-size: 0.8em;
+  }
+  &__btn {
+    &_contacto {
+      @include circle-button(3em);
+      background: {
+        image: var(--contact-image);
+        size: 2em;
+        repeat: no-repeat;
+        position: center;
+      }
+      margin-right: 1em;
+    }
+    &_modo {
+      @include circle-button(3em);
+      background: {
+        image: var(--mode-image);
+        size: 2em;
+        repeat: no-repeat;
+        position: center;
+      }
+      margin-left: 1em;
+    }
+  }
+}

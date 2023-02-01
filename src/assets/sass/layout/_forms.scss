@@ -1,0 +1,99 @@
+.acceso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  &__titulo {
+    @include titulo;
+    padding-bottom: 0;
+    font-size: 4em;
+  }
+  &__subtitulo {
+    @include subtitulo;
+    padding: 2%;
+    &_enlace {
+      @include enlace;
+    }
+  }
+  &__btn_submit {
+    @include button;
+    @include texto_relleno;
+    border-radius: 60px;
+    font-family: $mochiy;
+    font-size: 1em;
+    line-height: 2em;
+    padding: 0.5em 3em 0.5em 3em;
+    text-align: center;
+  }
+  &__formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+    width: 70%;
+    margin-bottom: 4%;
+    padding: 2%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    &_campo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8em;
+      width: 100%;
+      margin-left: 0;
+      &_nombre {
+        font: {
+          family: $maru;
+          size: 1.5em;
+        }
+        color: var(--visibility-color);
+      }
+      &_input {
+        @include campos-formulario;
+        text-align: center;
+      }
+      &_textarea {
+        @include campos-formulario;
+        resize: vertical;
+      }
+      &_socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10%;
+        margin: 1%;
+        &_btn_google {
+          @include circle-button(3em);
+          background: {
+            image: var(--google-image);
+            size: 3em;
+            repeat: no-repeat;
+            position: center;
+          }
+        }
+        &_btn_twitter {
+          @include circle-button(3em);
+          background: {
+            image: var(--twitter-image);
+            size: 3em;
+            repeat: no-repeat;
+            position: center;
+          }
+        }
+      }
+    }
+  }
+}
+//Mobile
+@media only screen and (max-width: 768px) {
+  .acceso {
+    &__titulo {
+      font-size: 3em;
+    }
+    &__formulario {
+      width: 100%;
+    }
+  }
+}

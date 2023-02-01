@@ -1,0 +1,108 @@
+// Animación
+@mixin pulsado {
+    transition: 120ms;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0px 6px 4px 0 rgba(0, 0, 0, 0.108);
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, 0.108);
+        transform: translateY(2px);
+    }
+}
+// Componentes
+@mixin campos-formulario {
+    width: 60%;
+    margin: 2%;
+    padding: 1%;
+    font-family: $antique;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    outline: 2px solid var(--visibility-color);
+}
+/// Cartas del tamaño dado
+///
+/// @param {number} $width
+///     Ancho de la carta.
+/// @param {number} $height
+///     Altura de la carta.
+@mixin carta($width: 15rem) {
+    $height: calc($width / 0.45);
+    @for $i from 1 through 52 {
+        &_card-#{$i} {
+            background-image: var(--card-#{$i});
+            width: $width;
+            height: $height;
+            background: {
+                size: $width;
+                repeat: no-repeat;
+                position: center;
+            }
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.108);
+            @include pulsado;
+        }
+    }
+}
+/// Listado de cartas del tamaño dado
+///
+/// @param {number} $size
+///     Tamaño de la carta.
+@mixin listado_cartas($size: 15rem) {
+    flex: 1 1 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    max-height: 25%;
+    margin: 50;
+    @include carta($size);
+}
+@mixin button {
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.108);
+    @include pulsado;
+}
+/// Da una forma de botón circular de un tamaño determinado.
+///
+/// @param {number} $size
+///     Tamaño del botón.
+@mixin circle-button($size) {
+    @include button;
+    min-width: $size;
+    min-height: $size;
+    border: none;
+    border-radius: 50%;
+}
+// Textos
+@mixin titulo {
+    font-family: $mochiy;
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding-bottom: 1em;
+}
+@mixin subtitulo {
+    text-align: center;
+    font-family: $antique;
+    color: var(--special-color-1);
+    padding-bottom: 1em;
+}
+@mixin texto_relleno {
+    color: var(--special-color-2);
+    -webkit-text-stroke: 1.5px var(--special-color-1);
+}
+@mixin enlace {
+    text-decoration: underline;
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
+// Utilidades
+@mixin mobile-invisible {
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+}

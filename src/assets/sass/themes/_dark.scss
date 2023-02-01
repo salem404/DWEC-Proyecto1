@@ -1,0 +1,15 @@
+//// Tema de noche
+.dark {
+  /// Colores
+  --primary-color: #{$nochePrimario};
+  --secondary-color: #{$nocheSecundario};
+  --special-color-1: #{$nocheAcento1};
+  --special-color-2: #{$nocheAcento2};
+  --background-color: #{$nocheFondo};
+  --visibility-color: #{$nocheAcento2};
+  /// Imagenes
+  --access-image: url(../../img/accesoNoche.svg);
+  --mode-image: url(../../img/modoNoche.svg);
+  --contact-image: url(../../img/contactoNoche.svg);
+  --search-image: url(../../img/searchNoche.svg);
+}

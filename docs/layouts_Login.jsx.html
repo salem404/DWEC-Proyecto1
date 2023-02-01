@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: layouts/Login.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: layouts/Login.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Componente página de login
+ *
+ * @author Paula Rumeu Romero
+ * @module Login
+ */
+
+// Imports react
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+// Import componente
+import isValid from "../components/Validacion"
+
+/**
+ * Componente de la página de login con su fomulario correspondiente
+ *
+ * @requires module:Validacion
+ *
+ * @returns {JSX} Página de login
+ */
+const Login = () => {
+  /**
+   * @name setInputs
+   * @description Almacena los inputs
+   * @requires react
+   * @function
+   */
+  const [inputs, setInputs] = useState({})
+
+  /**
+   * @name navigate
+   * @description Función para cambio de pantalla
+   * @requires react-router-dom
+   * @function
+   */
+  const navigate = useNavigate()
+
+  /**
+   * @name handleChange
+   * @description Al cambiar el target cambia los valores de los inputs almacenados
+   * @function
+   * @param {event} event Cambio en el input
+   */
+  const handleChange = (event) => {
+    const name = event.target.name
+    const value = event.target.value
+    setInputs((values) => ({ ...values, [name]: value }))
+  }
+
+  /**
+   * @name handleSubmit
+   * @description Al mandar el target se validan los almacenados en input
+   * @requires navigate
+   * @function
+   * @param {event} event Mandado de datos de un formulario
+   */
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (
+      isValid("usuario", inputs.usuario) &amp;&amp;
+      isValid("password", inputs.password)
+    ) {
+      navigate("/usuario", { replace: true })
+      window.location.reload(false)
+    }
+  }
+  return (
+    &lt;main className="acceso">
+      &lt;h1 className="acceso__titulo">Login&lt;/h1>
+      &lt;p className="acceso__subtitulo">
+        ¿No tienes cuenta?
+        &lt;a className="acceso__subtitulo_enlace" href="/registro">
+          ¡Registrate ahora!
+        &lt;/a>
+      &lt;/p>
+      &lt;form className="acceso__formulario" onSubmit={handleSubmit}>
+        &lt;div className="acceso__formulario_campo">
+          &lt;label for="usuario" className="acceso__formulario_campo_nombre">
+            Usuario
+          &lt;/label>
+          &lt;input
+            type="text"
+            name="usuario"
+            className="acceso__formulario_campo_input"
+            value={inputs.usuario || ""}
+            onChange={handleChange}
+            pattern="^[a-z\d_-]{4,16}$"
+            required
+          />
+        &lt;/div>
+        &lt;div className="acceso__formulario_campo">
+          &lt;label for="password" className="acceso__formulario_campo_nombre">
+            Contraseña
+          &lt;/label>
+          &lt;input
+            type="password"
+            name="password"
+            className="acceso__formulario_campo_input"
+            value={inputs.password || ""}
+            onChange={handleChange}
+            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+            required
+          />
+        &lt;/div>
+        &lt;button
+          type="submit"
+          name="Iniciar Sesión"
+          className="acceso__btn_submit"
+        >
+          ¡Libéralo ahora!
+        &lt;/button>
+      &lt;/form>
+      &lt;p className="acceso__subtitulo">
+        ¿No puedes acceder?
+        &lt;a href="/recuperar" className="acceso__subtitulo_enlace">
+          Reestablecer contraseña
+        &lt;/a>
+      &lt;/p>
+    &lt;/main>
+  )
+}
+
+export default Login
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-App.html">App</a></li><li><a href="module-Buscador.html">Buscador</a></li><li><a href="module-Carta.html">Carta</a></li><li><a href="module-CartaDetails.html">CartaDetails</a></li><li><a href="module-Contacto.html">Contacto</a></li><li><a href="module-Filtro.html">Filtro</a></li><li><a href="module-FiltroBtn.html">FiltroBtn</a></li><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Gender.html">Gender</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-Home.html">Home</a></li><li><a href="module-Listado.html">Listado</a></li><li><a href="module-Login.html">Login</a></li><li><a href="module-ModoBtn.html">ModoBtn</a></li><li><a href="module-NotFound.html">NotFound</a></li><li><a href="module-Paginacion.html">Paginacion</a></li><li><a href="module-Registro.html">Registro</a></li><li><a href="module-Species.html">Species</a></li><li><a href="module-Usuario.html">Usuario</a></li><li><a href="module-Validacion.html">Validacion</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Feb 01 2023 19:35:43 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

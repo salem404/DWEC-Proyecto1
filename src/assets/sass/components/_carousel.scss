@@ -1,0 +1,110 @@
+.vista {
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    padding: 1.25rem 0.5rem;
+    &_label {
+      color: var(--visibility-color);
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      padding: 1%;
+      cursor: pointer;
+    }
+    &_elemento {
+      position: relative;
+      height: 3rem;
+      width: 3rem;
+      padding: 1%;
+      margin: 0.5em;
+      color: var(--visibility-color);
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover,
+      &:active {
+        background-color: var(--secondary-color);
+        color: #fff;
+      }
+      &_active {
+        background-color: var(--secondary-color);
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+  &__galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    width: 100%;
+    height: 75vh;
+    padding: 1rem;
+    scroll-snap-type: both mandatory;
+    scroll-padding: 1rem;
+    contain: layout;
+    &_slide {
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      scroll: {
+        snap-type: x mandatory;
+        behavior: smooth;
+        snap-align: center;
+      }
+      justify-content: space-around;
+      border-radius: 3px;
+      height: 70vh;
+      &-item {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-around;
+        scroll-snap-align: start;
+        transform-origin: center center;
+        transition: transform 0.5s;
+        &_content {
+          display: flex;
+          gap: 3%;
+          flex-direction: row;
+          align-items: center;
+          @include carta(12rem);
+          &_info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding: 3%;
+            gap: 2vh;
+            font-size: 2vh;
+            color: var(--visibility-color);
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            p {
+              color: var(--visibility-color);
+            }
+            &_btn-like {
+              @include button;
+              min-width: 3em;
+              min-height: 3em;
+              border: none;
+              border-radius: 20px;
+              background: {
+                image: var(--kero);
+                size: 3em;
+                repeat: no-repeat;
+                position: center;
+              }
+              &:checked {
+                background-image: var(--happy-kero);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

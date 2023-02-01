@@ -1,0 +1,19 @@
+*:focus-visible {
+  outline: 2px dashed var(--visibility-color);
+}
+html {
+  background-color: var(--background-color);
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: var(--background-color);
+  font-family: $mochiy;
+  margin: 0;
+  position: relative;
+}
+p {
+  font-family: $maru;
+  color: var(--special-color-1);
+}
