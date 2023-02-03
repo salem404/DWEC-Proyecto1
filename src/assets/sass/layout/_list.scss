@@ -16,12 +16,14 @@
     &_nombre-usuario {
       margin: auto;
       font-size: 1.5em;
-      border-bottom: 4px solid var(--special-color-1);
     }
     &_info {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+    }
+    &_foto {
+      max-width: 6em;
     }
   }
   &__lista {

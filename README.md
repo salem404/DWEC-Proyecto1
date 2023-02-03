@@ -1,8 +1,8 @@
-# SakuraCards
+# Rick & Morty
 
-[![Desarrollo Web en Entorno Cliente](https://img.shields.io/badge/Asignatura-DWEC-ff69b4?style=for-the-badge)](https://iesrafaelalberti.es/c-f-g-s-desarrollo-de-aplicaciones-web/)
+[![Desarrollo Web en Entorno Cliente](https://img.shields.io/badge/Asignatura-DWEC-a6cf69?style=for-the-badge)](https://iesrafaelalberti.es/c-f-g-s-desarrollo-de-aplicaciones-web/)
 
-![Logo](https://seller.tcgplayer.com/media/2972/weiss_schwarz_cardcaptor_sakrua_clear_card_banner_02-2x.jpg)
+![Logo](https://cdn.shopify.com/s/files/1/0346/8063/5529/collections/rick-morty-collection-banner_1400x.jpg?v=1590095280)
 
 [![Hecho con Visual Studio Code](https://badges.aleen42.com/src/visual_studio_code.svg)](https://code.visualstudio.com/)
 [![Framework](https://badges.aleen42.com/src/react.svg)](https://reactjs.org/)
@@ -13,9 +13,8 @@ Trabajo de uso de API REST para la creacion de una aplicación web con REACT
 
 ## Índice
 
-- [SakuraCards](#sakuracards)
+- [Rick \& Morty](#rick--morty)
   - [Índice](#índice)
-  - [Aclaración](#aclaración)
   - [Despliegue](#despliegue)
   - [Documentación](#documentación)
   - [Scripts disponibles](#scripts-disponibles)
@@ -26,13 +25,9 @@ Trabajo de uso de API REST para la creacion de una aplicación web con REACT
 
 ---
 
-## Aclaración
-
-La API original que se iba a usar en la realización de este trabajo ([sakura-card-captor-api](https://github.com/JessVel/sakura-card-captor-api)) está desutilizada, por lo que ha sido sustituida por [The Rick and Morty API](https://rickandmortyapi.com/).
-
 ## Despliegue
 
-Aplicación desplegada a través de Netlify disponible [aquí](https://stupendous-mermaid-eabb10.netlify.app/)
+Aplicación desplegada a través de Netlify disponible [aquí](https://rick-and-morty-proyecto1.netlify.app/)
 
 ## Documentación
 

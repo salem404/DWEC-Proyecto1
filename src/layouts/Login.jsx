@@ -57,14 +57,26 @@ const Login = () => {
    */
   const handleSubmit = (event) => {
     event.preventDefault()
+    erroresLogin.innerHTML = ""
     if (
       isValid("usuario", inputs.usuario) &&
       isValid("password", inputs.password)
     ) {
+      localStorage.setItem("usuario", inputs.usuario)
       navigate("/usuario", { replace: true })
       window.location.reload(false)
+    } else {
+      if (!isValid("usuario", inputs.usuario)) {
+        erroresLogin.innerHTML = "<p>Usuario inválido</p>"
+      }
+      if (!isValid("password", inputs.password)) {
+        erroresLogin.innerHTML += "<p>Contraseña inválida</p>"
+      }
     }
   }
+
+  const erroresLogin = document.getElementById("errorLogin")
+
   return (
     <main className="acceso">
       <h1 className="acceso__titulo">Login</h1>
@@ -85,7 +97,6 @@ const Login = () => {
             className="acceso__formulario_campo_input"
             value={inputs.usuario || ""}
             onChange={handleChange}
-            pattern="^[a-z\d_-]{4,16}$"
             required
           />
         </div>
@@ -99,16 +110,16 @@ const Login = () => {
             className="acceso__formulario_campo_input"
             value={inputs.password || ""}
             onChange={handleChange}
-            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
             required
           />
         </div>
+        <div id="errorLogin"></div>
         <button
           type="submit"
           name="Iniciar Sesión"
           className="acceso__btn_submit"
         >
-          ¡Libéralo ahora!
+          Acceder
         </button>
       </form>
       <p className="acceso__subtitulo">

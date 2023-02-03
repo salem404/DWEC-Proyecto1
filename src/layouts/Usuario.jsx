@@ -38,12 +38,13 @@ const Usuario = () => {
           alt="Foto de usuario"
         />
         <h1 id="nombreUsuario" className="listado__usuario_nombre-usuario">
-          sakura.lover
+          {localStorage.getItem("usuario")}
         </h1>
         <div className="listado__usuario_info">
           <p>
             Última conexión: {date} a las {time}
           </p>
+          <p>Email: {localStorage.getItem("email")}</p>
           <p>Tema preferido: {localStorage.getItem("theme")}</p>
         </div>
       </div>

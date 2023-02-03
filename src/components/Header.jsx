@@ -5,7 +5,7 @@
  * @module Header
  */
 
-import logo from "../assets/img/logo.png"
+import logo from "../assets/img/RICK_MORTY.png"
 /**
  * @requires module:Logo
  * @returns {JSX} Header con logo y botón de login

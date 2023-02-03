@@ -57,16 +57,34 @@ const Registro = () => {
    */
   const handleSubmit = (event) => {
     event.preventDefault()
+    erroresRegistro.innerHTML = ""
     if (
       isValid("usuario", inputs.usuario) &&
       isValid("password", inputs.password) &&
       isValid("password2", inputs.password2, inputs.password) &&
       isValid("email", inputs.email)
     ) {
+      localStorage.setItem("usuario", inputs.usuario)
+      localStorage.setItem("email", inputs.email)
       navigate("/usuario", { replace: true })
       window.location.reload(false)
+    } else {
+      if (!isValid("usuario", inputs.usuario)) {
+        erroresRegistro.innerHTML += "<p>Usuario inválido</p>"
+      }
+      if (!isValid("password", inputs.password)) {
+        erroresRegistro.innerHTML += "<p>Constraseña inválida</p>"
+      }
+      if (!isValid("password2", inputs.password2, inputs.password)) {
+        erroresRegistro.innerHTML += "<p>Las contraseñas no coinciden</p>"
+      }
+      if (!isValid("email", inputs.email)) {
+        erroresRegistro.innerHTML += "<p>Email inválido</p>"
+      }
     }
   }
+  const erroresRegistro = document.getElementById("errorRegistro")
+
   return (
     <main className="acceso">
       <h1 className="acceso__titulo">Registro</h1>
@@ -81,6 +99,7 @@ const Registro = () => {
           <label for="usuario" className="acceso__formulario_campo_nombre">
             Usuario
           </label>
+          <p>(Entre 4 y 16 caracteres numeros, letras, _ o -)</p>
           <input
             type="text"
             name="usuario"
@@ -133,8 +152,9 @@ const Registro = () => {
             required
           />
         </div>
+        <div id="errorRegistro"></div>
         <button type="submit" name="Registrarse" className="acceso__btn_submit">
-          ¡Libéralo ahora!
+          Crear cuenta
         </button>
       </form>
     </main>
