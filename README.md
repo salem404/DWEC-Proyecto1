@@ -31,7 +31,7 @@ Aplicación desplegada a través de Netlify disponible [aquí](https://rick-and-
 
 ## Documentación
 
-Esta aplicación cuenta con documentación gracias a JSDoc disponible [aquí](https://salem404.github.io/DWEC-Proyecto1/)
+Esta aplicación cuenta con documentación gracias a JSDoc disponible [aquí](https://salem404.github.io/DWEC-Proyecto1/index.html)
 
 ## Scripts disponibles
 
