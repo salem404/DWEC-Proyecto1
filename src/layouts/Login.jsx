@@ -122,12 +122,6 @@ const Login = () => {
           Acceder
         </button>
       </form>
-      <p className="acceso__subtitulo">
-        ¿No puedes acceder?
-        <a href="/recuperar" className="acceso__subtitulo_enlace">
-          Reestablecer contraseña
-        </a>
-      </p>
     </main>
   )
 }

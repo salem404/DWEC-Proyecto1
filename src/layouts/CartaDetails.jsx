@@ -23,9 +23,7 @@ const CartaDetails = () => {
    */
   const { id } = useParams()
 
-
   const [fetchedData, updateFetchedData] = useState([])
-
 
   const { name, location, origin, gender, image, species } = fetchedData
 
@@ -55,7 +53,9 @@ const CartaDetails = () => {
     <div className="vista__galeria">
       <div className="vista__galeria_slide-item_content_info">
         <h1>{name}</h1>
-        <img className="img-fluid" src={image} alt="" />
+        <a href="/listado">
+          <img className="img-fluid" src={image} alt="" />
+        </a>
         <p>Gender: {gender} </p>
         <p>Location: {location?.name}</p>
         <p>Origin: {origin?.name}</p>

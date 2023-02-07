@@ -21,9 +21,21 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      margin-bottom: 1em;
     }
     &_foto {
       max-width: 6em;
+    }
+    &_logOut {
+      @include button;
+      @include texto_relleno;
+      border-radius: 60px;
+      font-family: $mochiy;
+      font-size: 1em;
+      line-height: 2em;
+      padding: 0.5em 3em 0.5em 3em;
+      text-align: center;
+      outline: 2px solid var(--visibility-color);
     }
   }
   &__lista {

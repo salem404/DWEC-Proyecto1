@@ -16,7 +16,7 @@ const NotFound = () => {
       </div>
       <img
         alt="Kero mareado"
-        src="https://64.media.tumblr.com/cb0039d495dc5475d6d18ce30c7257f2/tumblr_mlowyaqpJm1qcrfkgo1_500.gifv"
+        src="https://i.imgur.com/kXJkEfW.gif"
         className="otro__animado"
       />
       <div className="otro__opciones">

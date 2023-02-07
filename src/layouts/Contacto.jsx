@@ -58,16 +58,23 @@ const Contacto = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (isValid("email", inputs.email) && isValid("texto", inputs.mensaje)) {
-      alert("Mensaje enviado")
-      navigate("/", { replace: true })
-      window.location.reload(false)
+      document.getElementById("enviado").innerHTML =
+        "<p>Mensaje enviado, redireccionando al inicio...</p>"
+      setTimeout(function () {
+        navigate("/", { replace: true })
+        window.location.reload(false)
+      }, 2000)
     }
   }
   return (
     <main className="acceso">
       <h1 className="acceso__titulo">Contáctanos</h1>
       <p className="acceso__subtitulo">¿Qué tienes en mente?</p>
-      <form className="acceso__formulario" onSubmit={handleSubmit}>
+      <form
+        className="acceso__formulario"
+        id="contactoForm"
+        onSubmit={handleSubmit}
+      >
         <div className="acceso__formulario_campo">
           <label for="mensaje" className="acceso__formulario_campo_nombre">
             Mensaje
@@ -96,8 +103,9 @@ const Contacto = () => {
             required
           />
         </div>
+        <div id="enviado"></div>
         <button type="submit" className="acceso__btn_submit">
-          ¡Libéralo ahora!
+          Enviar
         </button>
       </form>
     </main>

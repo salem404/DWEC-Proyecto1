@@ -25,6 +25,7 @@
     line-height: 2em;
     padding: 0.5em 3em 0.5em 3em;
     text-align: center;
+    outline: 2px solid var(--visibility-color);
   }
   &__formulario {
     display: flex;
@@ -57,31 +58,6 @@
       &_textarea {
         @include campos-formulario;
         resize: vertical;
-      }
-      &_socials {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10%;
-        margin: 1%;
-        &_btn_google {
-          @include circle-button(3em);
-          background: {
-            image: var(--google-image);
-            size: 3em;
-            repeat: no-repeat;
-            position: center;
-          }
-        }
-        &_btn_twitter {
-          @include circle-button(3em);
-          background: {
-            image: var(--twitter-image);
-            size: 3em;
-            repeat: no-repeat;
-            position: center;
-          }
-        }
       }
     }
   }

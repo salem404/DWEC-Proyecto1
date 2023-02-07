@@ -8,6 +8,9 @@
 // Import imagen
 import profileImage from "../assets/img/profileImage.png"
 
+// Import reactTimeAgo
+import ReactTimeAgo from "react-time-ago"
+
 /**
  * Componente de usuario con miscelanea
  *
@@ -16,18 +19,10 @@ import profileImage from "../assets/img/profileImage.png"
 const Usuario = () => {
   /**
    * @name today
-   * @description Objeto Date del cual se sacan día y hora
+   * @description Objeto Date actualizado
    * @function
    */
-  const today = new Date(),
-    date =
-      today.getDate() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getFullYear(),
-    time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+  const today = new Date()
 
   return (
     <main className="listado">
@@ -38,13 +33,13 @@ const Usuario = () => {
           alt="Foto de usuario"
         />
         <h1 id="nombreUsuario" className="listado__usuario_nombre-usuario">
-          {localStorage.getItem("usuario")}
+          {localStorage.getItem("usuario") || "Anónimo"}
         </h1>
         <div className="listado__usuario_info">
           <p>
-            Última conexión: {date} a las {time}
+            Última conexión: <ReactTimeAgo date={today} locale="es-SP" />
           </p>
-          <p>Email: {localStorage.getItem("email")}</p>
+          <p>Email: {localStorage.getItem("email") || "No introducido"}</p>
           <p>Tema preferido: {localStorage.getItem("theme")}</p>
         </div>
       </div>
