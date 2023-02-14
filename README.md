@@ -7,21 +7,23 @@
 [![Hecho con Visual Studio Code](https://badges.aleen42.com/src/visual_studio_code.svg)](https://code.visualstudio.com/)
 [![Framework](https://badges.aleen42.com/src/react.svg)](https://reactjs.org/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a40f5715-ee44-4d63-93ae-6307b786de26/deploy-status)](https://app.netlify.com/sites/rick-and-morty-proyecto1/deploys)
+
 Trabajo de uso de API REST para la creacion de una aplicación web con REACT
 
 ---
 
 ## Índice
 
-- [Rick \& Morty](#rick--morty)
-  - [Índice](#índice)
-  - [Despliegue](#despliegue)
-  - [Documentación](#documentación)
-  - [Scripts disponibles](#scripts-disponibles)
-    - [Iniciar la aplicación](#iniciar-la-aplicación)
-    - [Preparar la aplicación para producción](#preparar-la-aplicación-para-producción)
-    - [Desplegar aplicación en netlify](#desplegar-aplicación-en-netlify)
-    - [Generar documentación](#generar-documentación)
+
+- [Índice](#índice)
+- [Despliegue](#despliegue)
+- [Documentación](#documentación)
+- [Scripts disponibles](#scripts-disponibles)
+  - [Iniciar la aplicación](#iniciar-la-aplicación)
+  - [Preparar la aplicación para producción](#preparar-la-aplicación-para-producción)
+  - [Desplegar aplicación en netlify](#desplegar-aplicación-en-netlify)
+  - [Generar documentación](#generar-documentación)
 
 ---
 
