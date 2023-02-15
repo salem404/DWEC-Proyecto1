@@ -91,6 +91,10 @@ const Login = () => {
           <label for="usuario" className="acceso__formulario_campo_nombre">
             Usuario
           </label>
+          <p>
+            (Entre 4 y 16 caracteres con al menos un numero, una letra, son
+            válidos también _ o -)
+          </p>
           <input
             type="text"
             name="usuario"
@@ -104,6 +108,7 @@ const Login = () => {
           <label for="password" className="acceso__formulario_campo_nombre">
             Contraseña
           </label>
+          <p>(Al menos 8 caracteres con al menos 1 letra y 1 número)</p>
           <input
             type="password"
             name="password"
