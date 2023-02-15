@@ -38,11 +38,21 @@ const isValid = (campo, input, input2 = "") => {
       if (input.match(/.+/g)) {
         return true
       }
-      alert("Mensaje inválido")
       return false
     case "password2":
       // Igual a la primera password
       if (input === input2) {
+        return true
+      }
+      return false
+    case "nombre":
+      // Nombre propio
+      if (input.match(/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/)) {
+        return true
+      }
+      return false
+    case "edad":
+      if (input > 0) {
         return true
       }
       return false

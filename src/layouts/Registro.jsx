@@ -64,10 +64,13 @@ const Registro = () => {
       isValid("password2", inputs.password2, inputs.password) &&
       isValid("email", inputs.email)
     ) {
-      localStorage.setItem("usuario", inputs.usuario)
       localStorage.setItem("email", inputs.email)
-      navigate("/usuario", { replace: true })
-      window.location.reload(false)
+      document.getElementById("enviado").innerHTML =
+        "<p>Usuario creado, redireccionando al login...</p>"
+      setTimeout(function () {
+        navigate("/login", { replace: true })
+        window.location.reload(false)
+      }, 2000)
     } else {
       if (!isValid("usuario", inputs.usuario)) {
         erroresRegistro.innerHTML += "<p>Usuario inválido</p>"
@@ -159,6 +162,7 @@ const Registro = () => {
           />
         </div>
         <div id="errorRegistro"></div>
+        <div id="enviado"></div>
         <button type="submit" name="Registrarse" className="acceso__btn_submit">
           Crear cuenta
         </button>
