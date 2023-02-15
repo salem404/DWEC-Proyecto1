@@ -18,6 +18,10 @@ const FiltroBtn = ({ input, task, updatePageNumber, index, name }) => {
   return (
     <div className="filtro__modos-check radio">
       <input
+        onClick={(x) => {
+          task(input)
+          updatePageNumber(1)
+        }}
         className="filtro__modos-input radio"
         type="radio"
         name={name}
@@ -29,7 +33,7 @@ const FiltroBtn = ({ input, task, updatePageNumber, index, name }) => {
           updatePageNumber(1)
         }}
         className="filtro__modos-label radio"
-        for={`${name}-${index}`}
+        htmlFor={`${name}-${index}`}
       >
         {" "}
         {input}{" "}

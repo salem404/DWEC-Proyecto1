@@ -76,7 +76,7 @@ const Contacto = () => {
         onSubmit={handleSubmit}
       >
         <div className="acceso__formulario_campo">
-          <label for="mensaje" className="acceso__formulario_campo_nombre">
+          <label htmlFor="mensaje" className="acceso__formulario_campo_nombre">
             Mensaje
           </label>
           <textarea
@@ -86,11 +86,10 @@ const Contacto = () => {
             onChange={handleChange}
             required
             pattern=".+"
-            g
           ></textarea>
         </div>
         <div className="acceso__formulario_campo">
-          <label for="email" className="acceso__formulario_campo_nombre">
+          <label htmlFor="email" className="acceso__formulario_campo_nombre">
             Email
           </label>
           <input

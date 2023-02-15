@@ -96,7 +96,7 @@ const Registro = () => {
       </p>
       <form className="acceso__formulario" onSubmit={handleSubmit}>
         <div className="acceso__formulario_campo">
-          <label for="usuario" className="acceso__formulario_campo_nombre">
+          <label htmlFor="usuario" className="acceso__formulario_campo_nombre">
             Usuario
           </label>
           <p>
@@ -113,7 +113,10 @@ const Registro = () => {
           />
         </div>
         <div className="acceso__formulario_campo">
-          <label for="contraseña" className="acceso__formulario_campo_nombre">
+          <label
+            htmlFor="contraseña"
+            className="acceso__formulario_campo_nombre"
+          >
             Contraseña
           </label>
           <p>(Al menos 8 caracteres con al menos 1 letra y 1 número)</p>
@@ -128,7 +131,7 @@ const Registro = () => {
         </div>
         <div className="acceso__formulario_campo">
           <label
-            for="repetir contraseña"
+            htmlFor="repetir contraseña"
             className="acceso__formulario_campo_nombre"
           >
             Repetir contraseña
@@ -143,7 +146,7 @@ const Registro = () => {
           />
         </div>
         <div className="acceso__formulario_campo">
-          <label for="email" className="acceso__formulario_campo_nombre">
+          <label htmlFor="email" className="acceso__formulario_campo_nombre">
             Email
           </label>
           <input

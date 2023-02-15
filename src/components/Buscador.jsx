@@ -28,5 +28,4 @@ const Buscador = ({ setBuscador, updatePageNumber }) => {
     </form>
   )
 }
-
 export default Buscador

@@ -85,7 +85,7 @@ const Listado = () => {
       let data = await fetch(api).then((res) => res.json())
       updateFetchedData(data)
     })()
-  })
+  }, [api])
 
   /**
    * @name updateFetchedData

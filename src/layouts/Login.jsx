@@ -88,7 +88,7 @@ const Login = () => {
       </p>
       <form className="acceso__formulario" onSubmit={handleSubmit}>
         <div className="acceso__formulario_campo">
-          <label for="usuario" className="acceso__formulario_campo_nombre">
+          <label htmlFor="usuario" className="acceso__formulario_campo_nombre">
             Usuario
           </label>
           <p>
@@ -105,7 +105,7 @@ const Login = () => {
           />
         </div>
         <div className="acceso__formulario_campo">
-          <label for="password" className="acceso__formulario_campo_nombre">
+          <label htmlFor="password" className="acceso__formulario_campo_nombre">
             Contraseña
           </label>
           <p>(Al menos 8 caracteres con al menos 1 letra y 1 número)</p>
